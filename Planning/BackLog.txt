@@ -1,0 +1,17 @@
+Back Log
+
+Create API template ready to use with app
+	Generate template
+	Remove unnessesary code
+	Add Tags
+	Pack the template as noget package
+	I have corrected too much in the template!!!!!!!!!! REDO
+
+Create flowbased gui
+	Create Add Service flow
+	
+add db to app
+	choise of db system
+		How to perform the CRUD operations in WPF Scheduler
+			https://www.syncfusion.com/kb/12648/how-to-perform-the-crud-operations-in-wpf-scheduler-calendar-using-postgresql-database
+	Entity framework
