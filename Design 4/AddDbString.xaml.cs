@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Design_4
+namespace DMGenerator
 {
     /// <summary>
     /// Interaction logic for AddDbString.xaml

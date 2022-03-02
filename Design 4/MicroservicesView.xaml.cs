@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Design_4
+namespace DMGenerator
 {
     /// <summary>
     /// Interaction logic for MicroservicesView.xaml

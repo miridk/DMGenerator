@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Input;
 
-namespace Design_4
+namespace DMGenerator
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

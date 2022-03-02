@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace Design_4
+namespace DMGenerator
 {
     public class Functionality
     {

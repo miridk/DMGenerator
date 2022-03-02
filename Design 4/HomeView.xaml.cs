@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace Design_4
+namespace DMGenerator
 {
     /// <summary>
     /// Interaction logic for HomeView.xaml

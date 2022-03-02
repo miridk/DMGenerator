@@ -1,7 +1,7 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace Design_4
+namespace DMGenerator
 {
     /// <summary>
     /// Interaction logic for AddPropertiesView.xaml

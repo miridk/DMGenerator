@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace Design_4
+namespace DMGenerator
 {
     /// <summary>
     /// Interaction logic for AddNewServiceView.xaml
@@ -61,6 +61,10 @@ namespace Design_4
             process.Start();
             string s = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
+
+            StreamWriter strm = File.CreateText(@"c:\temp\StandardOutput.txt");
+            strm.Flush();
+            strm.Close();
 
             using (StreamWriter outfile = new StreamWriter(@"c:\temp\StandardOutput.txt", true))
             {
