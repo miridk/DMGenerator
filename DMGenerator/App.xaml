@@ -4,6 +4,26 @@
              xmlns:local="clr-namespace:DMGenerator"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="MenuButtonsTemplate" TargetType="Button">
+            <Setter Property="Background" Value="#00000000"/>
+            <Setter Property="Foreground" Value="#FFB7B7B7"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="0" Background="#00000000" BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center">
+                                
+                            </ContentPresenter> 
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Red"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>
