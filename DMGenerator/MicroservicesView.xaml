@@ -9,6 +9,6 @@
       Title="MicroservicesView">
 
     <Grid>
-        <TextBlock Text="MicroserviceView" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40"/>
+        <TextBlock Text="This page is not operational yet!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40"/>
     </Grid>
 </Page>

@@ -35,6 +35,11 @@ namespace DMGenerator
         {
             Main.Content = new HomeView();
         }
+       
+        private void createBackendBtn_Clicked(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new AddNewServiceView();
+        }
 
         private void microserviceBtn_Clicked(object sender, RoutedEventArgs e)
         {

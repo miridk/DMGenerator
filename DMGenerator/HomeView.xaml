@@ -16,7 +16,7 @@
                     <Hyperlink NavigateUri="AddNewServiceView.xaml"
                                TextDecorations="{x:Null}">
                         <Border Width="400"
-                                Height="200">
+                                Height="60">
                             <Border.Background>
                                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                                     <GradientStop Color="#5bc3ff" Offset="0.0"/>
@@ -26,7 +26,7 @@
                             <Border.Clip>
                                 <RectangleGeometry RadiusX="10"
                                        RadiusY="10"
-                                       Rect="0,0,400,200"/>
+                                       Rect="0,0,400,60"/>
                             </Border.Clip>
                             <Grid>
                                 <StackPanel>

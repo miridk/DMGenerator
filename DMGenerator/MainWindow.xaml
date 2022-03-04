@@ -35,26 +35,39 @@
                         Text="Dashboard"
                         Margin="20,0,0,0"/>
                 </Button>
-                <Button HorizontalAlignment="Left" 
-                        Width="150" Height="40" 
-                        BorderThickness="0" 
-                        Background="Transparent"
-                        Foreground="#FFB7B7B7" 
-                        Click="microserviceBtn_Clicked"
-                        HorizontalContentAlignment="Left">
+                <Button Style="{StaticResource MenuButtonsTemplate}" 
+                        Width="150" Height="40"
+                        Click="createBackendBtn_Clicked">
                     <TextBlock
-                        Text="Microservices"
+                        Text="Create Backend"
                         Margin="20,0,0,0"/>
                 </Button>
-                <Button HorizontalAlignment="Left" 
-                        Width="150" Height="40" 
-                        BorderThickness="0" 
-                        Background="Transparent"
-                        Foreground="#FFB7B7B7" 
-                        Click="microserviceBtn_Clicked"
-                        HorizontalContentAlignment="Left">
+                <Button Style="{StaticResource MenuButtonsTemplate}" 
+                        Width="150" Height="40"
+                        Click="microserviceBtn_Clicked">
                     <TextBlock
-                        Text="Databases"
+                        Text="Create Frontend"
+                        Margin="20,0,0,0"/>
+                </Button>
+                <Button Style="{StaticResource MenuButtonsTemplate}" 
+                        Width="150" Height="40"
+                        Click="microserviceBtn_Clicked">
+                    <TextBlock
+                        Text="Pipeline Management"
+                        Margin="20,0,0,0"/>
+                </Button>
+                <Button Style="{StaticResource MenuButtonsTemplate}" 
+                        Width="150" Height="40"
+                        Click="microserviceBtn_Clicked">
+                    <TextBlock
+                        Text="Settings"
+                        Margin="20,0,0,0"/>
+                </Button>
+                <Button Style="{StaticResource MenuButtonsTemplate}" 
+                        Width="150" Height="40"
+                        Click="microserviceBtn_Clicked">
+                    <TextBlock
+                        Text="About"
                         Margin="20,0,0,0"/>
                 </Button>
 
