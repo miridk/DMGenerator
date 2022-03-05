@@ -20,6 +20,20 @@ namespace DMGenerator
         public AddNewServiceView()
         {
             InitializeComponent();
+            Functionality.textToReplace = "";
+            Functionality.text = "";
+            Functionality.efType = "";
+            Functionality.templateOfChoice = "";
+            Functionality.connectionStringReplace = "";
+
+            Functionality.templates.Clear();
+            Functionality.props.Clear();
+            Functionality.types.Clear();
+            Functionality.required.Clear();
+            Functionality.propsConcatList.Clear();
+            Functionality.cPropsConcatList.Clear();
+            Functionality.efPropsConcatList.Clear();
+            Functionality.efDataContextPropsConcatList.Clear();
 
             res.Clear();
             FeedbackFromPowerShellRun(script);

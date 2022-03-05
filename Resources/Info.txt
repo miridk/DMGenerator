@@ -1,0 +1,52 @@
+https://dev.azure.com/UnikSaas/Unik%20SaaS/_git/app-finance_unit-angular?path=%2F&version=GBmri%2F3031%2FSk%C3%A6rmbillede_til_at_se_en_finansenheds_detaljer&_a=contents
+
+app.UseCors(config => config.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+_______________________________________________
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+	app.UseSwagger();
+	app.UseSwaggerUI();
+}
+else
+{
+	app.UseExceptionHandler(appBuilder =>
+	{
+		appBuilder.Run(async context =>
+		{
+			context.Response.StatusCode = 500;
+			await context.Response.WriteAsync("An unexpected fault happened. Try again later");
+		});
+
+	});
+}
+__________________________________________________
+
+version: '3.4'
+
+services:
+  db:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+        SA_PASSWORD: "#Admin123"
+        ACCEPT_EULA: "Y"
+    ports:
+    - "1433:1433"
+    networks:
+      - financeunit
+
+  unik.bolig.finance.financeunit.api:
+    image: ${DOCKER_REGISTRY-}unikboligfinancefinanceunitapi
+    build:
+      context: .
+      dockerfile: Unik.Bolig.Finance.Financeunit.API/Dockerfile
+    environment:
+      ConnectionStrings__DBConnection: "Server=db,1433;Initial Catalog=FinanceUnitDB;User ID=sa;password=#Admin123;MultipleActiveResultSets=true"
+    networks:
+      - financeunit
+    depends_on:
+      - db  
+networks:
+    financeunit:
+        name: financeunit
