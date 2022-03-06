@@ -7,16 +7,18 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="HomeView">
-
-    <Grid>
-        <StackPanel Width="420"
+    <StackPanel>
+    
+        <StackPanel Width="620"
+                    Orientation="Vertical"
                     HorizontalAlignment="Left">
             <Border>
-                <TextBlock>
+                <Grid>
+                <TextBlock Margin="0,0,0,10">
                     <Hyperlink NavigateUri="FirstViewAddService.xaml"
                                TextDecorations="{x:Null}">
-                        <Border Width="400"
-                                Height="60">
+                        <Border Width="600"
+                                Height="180">
                             <Border.Background>
                                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                                     <GradientStop Color="#5bc3ff" Offset="0.0"/>
@@ -24,13 +26,13 @@
                                 </LinearGradientBrush>
                             </Border.Background>
                             <Border.Clip>
-                                <RectangleGeometry RadiusX="10"
-                                       RadiusY="10"
-                                       Rect="0,0,400,60"/>
+                                <RectangleGeometry RadiusX="5"
+                                       RadiusY="5"
+                                       Rect="0,0,600,180"/>
                             </Border.Clip>
                             <Grid>
                                 <StackPanel>
-                                    <TextBlock Text="Start Adding A New Service"
+                                    <TextBlock Text="Add A New Backend Service"
                                                Foreground="White"
                                                FontSize="24"
                                                Margin="20,10,10,0"/>
@@ -39,7 +41,42 @@
                         </Border>
                     </Hyperlink>
                 </TextBlock>
+                </Grid>
             </Border>
         </StackPanel>
-    </Grid>
+        <StackPanel Width="620"
+                    HorizontalAlignment="Left">
+            <Border>
+                <Grid>
+                    <TextBlock>
+                    <Hyperlink NavigateUri="MicroservicesView.xaml"
+                               TextDecorations="{x:Null}">
+                        <Border Width="600"
+                                Height="180">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                    <GradientStop Color="#5bc3ff" Offset="0.0"/>
+                                    <GradientStop Color="Black" Offset="1.2"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Border.Clip>
+                                <RectangleGeometry RadiusX="5"
+                                       RadiusY="5"
+                                       Rect="0,0,600,180"/>
+                            </Border.Clip>
+                            <Grid>
+                                <StackPanel>
+                                    <TextBlock Text="Add A New Frontend"
+                                               Foreground="White"
+                                               FontSize="24"
+                                               Margin="20,10,10,0"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </Hyperlink>
+                </TextBlock>
+                </Grid>
+            </Border>
+        </StackPanel>
+    </StackPanel>
 </Page>

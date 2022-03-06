@@ -48,7 +48,7 @@ namespace DMGenerator
             process.Start();
             string lines = process.StandardOutput.ReadToEnd();
 
-            powerShellOutputListBox.Items.Add(lines.ToString());
+            //powerShellOutputListBox.Items.Add(lines.ToString());
 
             process.WaitForExit();
         }

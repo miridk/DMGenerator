@@ -50,3 +50,30 @@ services:
 networks:
     financeunit:
         name: financeunit
+
+
+_______________________________________________________
+
+version: '3.4'
+
+services:
+  db:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+        SA_PASSWORD: "#Admin123"
+        ACCEPT_EULA: "Y"
+    ports:
+    - "1433:1433"
+
+
+  unik.bolig.finance.financeunit.api:
+    image: ${DOCKER_REGISTRY-}unikboligfinancefinanceunitapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      ConnectionStrings__DBConnection: "Server=db,1433;Initial Catalog=FinanceUnitDB;User ID=sa;password=#Admin123;MultipleActiveResultSets=true"
+    ports:
+    - "4800:80"
+    depends_on:
+      - db  

@@ -29,15 +29,15 @@
                         Margin="10,0,0,20"/>
         </StackPanel>
         <Border CornerRadius="5"
-                        Margin="80,0,20,0"
-                        HorizontalAlignment="Right"
+                        Margin="460,0,20,0"
+                        HorizontalAlignment="Left"
                         VerticalAlignment="Bottom">
             <TextBlock HorizontalAlignment="Right" 
                        VerticalAlignment="Center"
                        Width="150" 
                        TextDecorations="{x:Null}" 
                        Height="40"> 
-                        <Hyperlink NavigateUri="HomeView.xaml" 
+                        <Hyperlink NavigateUri="FinnishedInstalling.xaml" 
                                    Foreground="White" 
                                    TextDecorations="{x:Null}">                  
                             <Border x:Name="finishBtn" Width="150" Height="40"
