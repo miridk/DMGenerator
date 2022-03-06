@@ -13,7 +13,7 @@
                     HorizontalAlignment="Left">
             <Border>
                 <TextBlock>
-                    <Hyperlink NavigateUri="AddNewServiceView.xaml"
+                    <Hyperlink NavigateUri="FirstViewAddService.xaml"
                                TextDecorations="{x:Null}">
                         <Border Width="400"
                                 Height="60">

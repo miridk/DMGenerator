@@ -29,7 +29,10 @@ namespace DMGenerator
 
         private void nextBtnAddNewTemplate(object sender, MouseButtonEventArgs e)
         {
-;
+            ; string templatePath = templatePathTextBox.Text;
+            templatePath = templatePath.Replace(" ", "` ");
+            string script = @$"dotnet new --install {templatePath}";
+            RunScript(script);
         }
 
         private void RunScript(string script)
@@ -52,10 +55,7 @@ namespace DMGenerator
 
         private void installTemplateBtn(object sender, RoutedEventArgs e)
         {
-            string templatePath = templatePathTextBox.Text;
-            templatePath = templatePath.Replace(" ", "` ");
-            string script = @$"dotnet new --install {templatePath}";
-            RunScript(script);
+
         }
     }
 }
