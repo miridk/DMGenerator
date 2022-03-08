@@ -161,7 +161,7 @@
         <StackPanel Orientation="Horizontal"
                     Margin="0,0,0,10">
             <Border Width="600"
-                    Height="200">
+                    Height="180">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="#5bc3ff" Offset="0.0"/>
@@ -171,7 +171,7 @@
                 <Border.Clip>
                     <RectangleGeometry RadiusX="5"
                                        RadiusY="5"
-                                       Rect="0,0,600,200"/>
+                                       Rect="0,0,600,180"/>
                 </Border.Clip>
                 <Grid>
                     <StackPanel>
@@ -192,7 +192,7 @@
                                        VerticalAlignment="Center"
                                        Width="600" 
                                        TextDecorations="{x:Null}" 
-                                       Height="200"> 
+                                       Height="180"> 
                                 <Hyperlink NavigateUri="AddNewServiceView.xaml" 
                                            Foreground="White" 
                                            TextDecorations="{x:Null}">  

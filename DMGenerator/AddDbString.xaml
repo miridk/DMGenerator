@@ -17,7 +17,7 @@
                    Margin="0,0,0,20"/>
         </StackPanel>
         <StackPanel>
-            <TextBlock Text="Connection String"
+            <TextBlock Text="Local Connection String"
                            Foreground="White"
                            Margin="10,0,0,5"/>
             <TextBox x:Name="connectionStringTextBox" 
@@ -28,8 +28,47 @@
                         Height="100"
                         Margin="10,0,0,20"/>
         </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
         <Border CornerRadius="5"
-                        Margin="460,0,20,0"
+                        Margin="0,20,220,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom">
+            <TextBlock HorizontalAlignment="Right" 
+                       VerticalAlignment="Center"
+                       Width="150" 
+                       TextDecorations="{x:Null}" 
+                       Height="40"> 
+                        <Hyperlink NavigateUri="AddPropertiesView.xaml" 
+                                   Foreground="White" 
+                                   TextDecorations="{x:Null}">                  
+                            <Border Width="150" Height="40"
+                                    CornerRadius="5">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                        <GradientStop Color="#FF5BFF7C" Offset="0.0"/>
+                                        <GradientStop Color="Black" Offset="1.2"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.Clip>
+                                    <RectangleGeometry RadiusX="5"
+                                                       RadiusY="5"
+                                                       Rect="0,0,150,40"/>
+                                </Border.Clip>
+                                <TextBlock Text="Back"
+                                               FontSize="18" 
+                                               Foreground="White"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center">
+                            
+                                </TextBlock>
+                            </Border>
+                        </Hyperlink>
+                    </TextBlock>
+        </Border>
+
+        <Border CornerRadius="5"
+                        Margin="88,0,20,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Bottom">
             <TextBlock HorizontalAlignment="Right" 
@@ -64,5 +103,6 @@
                         </Hyperlink>
                     </TextBlock>
         </Border>
+        </StackPanel>
     </StackPanel>
 </Page>

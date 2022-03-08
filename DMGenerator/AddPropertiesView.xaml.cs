@@ -11,6 +11,18 @@ namespace DMGenerator
         public AddPropertiesView()
         {
             InitializeComponent();
+
+            if(propertiesAddedCheckBox.Items.Count == 0)
+            {
+            propertiesAddedCheckBox.Items.Add("public int Id { get; set; } ");
+            }
+
+            int counterOfArraylistInit = Functionality.props.Count;
+            string[] st = new string[counterOfArraylistInit];
+            for (int i = 0; i < st.Length; i++)
+            {
+                propertiesAddedCheckBox.Items.Add("public " + Functionality.types[i] + " " + Functionality.props[i] + " { get; set; } " + Functionality.required[i]);
+            }
         }
 
         private void nextBtnAddProperties(object sender, MouseButtonEventArgs e)
@@ -35,6 +47,7 @@ namespace DMGenerator
                 Functionality.required.Add("");
             }
             propertiesAddedCheckBox.Items.Clear();
+            propertiesAddedCheckBox.Items.Add("public int Id { get; set; } ");
             int counterOfArraylist = Functionality.props.Count;
             string[] str = new string[counterOfArraylist];
             for (int i = 0; i < str.Length; i++)
