@@ -24,9 +24,14 @@ namespace DMGenerator
             string templ = Functionality.templateOfChoice;
             projectName = propertyNameTextBox.Text;
             projectName = projectName.Replace(" ", "_");
-            string script = @$"dotnet new {templ} -o c:\temp\Template\{projectName}"; 
+            string dir = @"C:\Temp\Template\";
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+            string script = @$"dotnet new {templ} -o C:\Temp\Template\{projectName}"; 
             RunScript(script);
-            File.Move(@$"c:\temp\Template\{projectName}\Dockerfile.del", @$"c:\temp\Template\{projectName}\Dockerfile");
+            File.Move(@$"C:\Temp\Template\{projectName}\Dockerfile.del", @$"C:\Temp\Template\{projectName}\Dockerfile");
         }
 
       
