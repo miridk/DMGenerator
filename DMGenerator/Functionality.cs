@@ -12,6 +12,8 @@ namespace DMGenerator
         public static string efType = "";
         public static string templateOfChoice = "";
         public static string connectionStringReplace = "";
+        public static string projectName = "";
+        public static string installationPath = @$"{rootfolder}\{projectName}";
 
         public static List<string> templates = new List<string>();
         public static List<string> props = new List<string>();
