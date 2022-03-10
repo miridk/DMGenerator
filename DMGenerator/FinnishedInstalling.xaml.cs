@@ -32,37 +32,40 @@ namespace DMGenerator
         private void startSeviceBtn(object sender, MouseButtonEventArgs e)
         {
             string templatePath = Functionality.rootfolder;
-            templatePath = templatePath.Replace(@"\", "/");
-            templatePath = $@"{templatePath}/{Functionality.projectName}";
-            string command = @$"docker-compose -f {templatePath}/docker-compose.yml up -d";
-            RunDockerComposeScript(command);
+            //templatePath = templatePath.Replace(@"\", "/");
+            //templatePath = $@"{templatePath}/{Functionality.projectName}";
+
+            string command = @$"{templatePath}\{Functionality.projectName}\Run_Solution.ps1";
+
+            //string command = @$"docker-compose -f {templatePath}/docker-compose.yml up -d";
+
             ////command = @$"Start-Process -FilePath http://localhost:14800/swagger/index.html";
-            ////RunDockerComposeScript(command);
 
-            //StreamWriter strm = File.CreateText(@"C:\Temp\LogPath.txt");
+            //StringBuilder sb = new StringBuilder();
+            //sb.Append(command);
+            //// flush every 20 seconds as you do it
+            //File.AppendAllText(@"C:\Temp\LogPath.txt", sb.ToString());
+            //sb.Clear();
 
-            //using (StreamWriter outfile = new StreamWriter(@"C:\Temp\LogPath.txt", true))
-            //{
-            //    outfile.Write($@"{templatePath}/{Functionality.projectName}");
-            //}
-
+            RunDockerComposeScript(command);
         }
 
 
         private void RunDockerComposeScript(string command)
         {
+            //Process.Start(@"C:\windows\system32\windowspowershell\v1.0\powershell.exe", @"-File ""C:\Temp\Template\Test_API\Run_Solution.ps1""");
 
-            var process = new Process();
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.CreateNoWindow = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.FileName = @"C:\windows\system32\windowspowershell\v1.0\powershell.exe";
-            process.StartInfo.Arguments = command;
+            //var process = new Process();
+            //process.StartInfo.UseShellExecute = false;
+            //process.StartInfo.CreateNoWindow = false;
+            ////process.StartInfo.RedirectStandardOutput = true;
+            //process.StartInfo.FileName = @"C:\windows\system32\windowspowershell\v1.0\powershell.exe";
+            //process.StartInfo.Arguments = @"""C:\Temp\Template\Test_API\Run_Solution.ps1""";
 
-            process.Start();
-            //string lines = process.StandardOutput.ReadToEnd();
+            //process.Start();
+            ////string lines = process.StandardOutput.ReadToEnd();
 
-            process.WaitForExit();
+            //process.WaitForExit();
         }
     }
 }

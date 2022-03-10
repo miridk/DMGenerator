@@ -13,7 +13,7 @@ namespace DMGenerator
         public static string templateOfChoice = "";
         public static string connectionStringReplace = "";
         public static string projectName = "";
-        public static string installationPath = @$"{rootfolder}\{projectName}";
+        //public static string installationPath = @$"{rootfolder}\{projectName}";
 
         public static List<string> templates = new List<string>();
         public static List<string> props = new List<string>();
@@ -56,7 +56,13 @@ namespace DMGenerator
             //Creating Controller Model
             for (int i = 0; i < props.Count; i++)
             {
-                string propsConcat = "\n        db" + NameProject.projectName.ToLower() + "." + props[i] + " = request." + props[i] + ";";
+
+                string propsConcatStart = $"db{ NameProject.projectName.ToLower() }.{ props[i] }";
+                string propsConcatEnd = $"request.{ props[i] };";
+                propsConcatStart = propsConcatStart.Replace(" ", "_");
+                propsConcatEnd = propsConcatEnd.Replace(" ", "_");
+                string propsConcat = $"{propsConcatStart} = {propsConcatEnd}";
+                propsConcat = $"\n        {propsConcat}";
                 cPropsConcatList.Add(propsConcat);
             }
             var cPropsJoined = String.Join("\n        ", cPropsConcatList.ToArray());
