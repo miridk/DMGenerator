@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,29 +31,38 @@ namespace DMGenerator
 
         private void startSeviceBtn(object sender, MouseButtonEventArgs e)
         {
-            string templatePath = Functionality.installationPath.Replace(@"\", "/");
+            string templatePath = Functionality.rootfolder;
+            templatePath = templatePath.Replace(@"\", "/");
+            templatePath = $@"{templatePath}/{Functionality.projectName}";
             string command = @$"docker-compose -f {templatePath}/docker-compose.yml up -d";
             RunDockerComposeScript(command);
-            command = @$"Start-Process -FilePath http://localhost:14800/swagger/index.html";
-            RunDockerComposeScript(command);
+            ////command = @$"Start-Process -FilePath http://localhost:14800/swagger/index.html";
+            ////RunDockerComposeScript(command);
+
+            //StreamWriter strm = File.CreateText(@"C:\Temp\LogPath.txt");
+
+            //using (StreamWriter outfile = new StreamWriter(@"C:\Temp\LogPath.txt", true))
+            //{
+            //    outfile.Write($@"{templatePath}/{Functionality.projectName}");
+            //}
 
         }
-    
 
-    private void RunDockerComposeScript(string command)
-    {
-        
-        var process = new Process();
-        process.StartInfo.UseShellExecute = false;
-        process.StartInfo.CreateNoWindow = false;
-        process.StartInfo.RedirectStandardOutput = true;
-        process.StartInfo.FileName = @"C:\windows\system32\windowspowershell\v1.0\powershell.exe";
-        process.StartInfo.Arguments = command;
+
+        private void RunDockerComposeScript(string command)
+        {
+
+            var process = new Process();
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.CreateNoWindow = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.FileName = @"C:\windows\system32\windowspowershell\v1.0\powershell.exe";
+            process.StartInfo.Arguments = command;
 
             process.Start();
-        //string lines = process.StandardOutput.ReadToEnd();
+            //string lines = process.StandardOutput.ReadToEnd();
 
-        process.WaitForExit();
+            process.WaitForExit();
+        }
     }
-}
 }

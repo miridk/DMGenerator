@@ -26,8 +26,6 @@ namespace DMGenerator
 
         public static void ReplaceTags()
         {
-            
-
             string[] files = Directory.GetFiles(rootfolder, "*.*", SearchOption.AllDirectories);
 
             //Creating Properties Model
