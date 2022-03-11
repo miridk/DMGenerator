@@ -35,8 +35,9 @@ namespace DMGenerator
             //templatePath = templatePath.Replace(@"\", "/");
             //templatePath = $@"{templatePath}/{Functionality.projectName}";
 
-            string command = @$"{templatePath}\{Functionality.projectName}\Run_Solution.ps1";
-
+            //string command = @$"Start-Process -FilePath ""{templatePath}\{Functionality.projectName}\Run_Solution.ps1""";
+            string command = @"invoke -expression 'cmd /c start powershell -Command { Run_Solution.ps1; set-location """ +templatePath + "\"\\\"" + Functionality.projectName+"\"\\\" ; sleep 3 }";
+            //invoke -expression 'cmd /c start powershell -Command { docker compose up --build; set-location ".\"; get-childitem ; sleep 3}'
             //string command = @$"docker-compose -f {templatePath}/docker-compose.yml up -d";
 
             ////command = @$"Start-Process -FilePath http://localhost:14800/swagger/index.html";
@@ -53,6 +54,29 @@ namespace DMGenerator
 
         private void RunDockerComposeScript(string command)
         {
+
+            string strCmdText = command;
+            var process = new Process();
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.CreateNoWindow = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.FileName = @"C:\windows\system32\windowspowershell\v1.0\powershell.exe";
+            process.StartInfo.Arguments = strCmdText;
+
+            process.Start();
+            string s = process.StandardOutput.ReadToEnd();
+            process.WaitForExit();
+
+            StreamWriter strm = File.CreateText(@"c:\temp\StandardOutput2.txt");
+            strm.Flush();
+            strm.Close();
+
+            using (StreamWriter outfile = new StreamWriter(@"c:\temp\StandardOutput2.txt", true))
+            {
+                outfile.Write(s);
+            }
+
+
             //Process.Start(@"C:\windows\system32\windowspowershell\v1.0\powershell.exe", @"-File ""C:\Temp\Template\Test_API\Run_Solution.ps1""");
 
             //var process = new Process();
