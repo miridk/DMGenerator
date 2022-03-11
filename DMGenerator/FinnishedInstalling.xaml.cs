@@ -36,8 +36,12 @@ namespace DMGenerator
             //templatePath = $@"{templatePath}/{Functionality.projectName}";
 
             //string command = @$"Start-Process -FilePath ""{templatePath}\{Functionality.projectName}\Run_Solution.ps1""";
-            string command = @"invoke -expression 'cmd /c start powershell -Command { Run_Solution.ps1; set-location """ +templatePath + "\"\\\"" + Functionality.projectName+"\"\\\" ; sleep 3 }";
-            //invoke -expression 'cmd /c start powershell -Command { docker compose up --build; set-location ".\"; get-childitem ; sleep 3}'
+            //string command = @"invoke-expression 'cmd /c start powershell -Command { Run_Solution.ps1; set-location """ + templatePath + "\\" + Functionality.projectName + "\"; get-childitem ; sleep 3}'";
+            string scriptPath = @$"{templatePath}\{Functionality.projectName}\";
+            //string command = $"Invoke-Expression \"{scriptPath}\";";
+            string command = "Invoke-Expression 'cmd /c start powershell -Command { docker compose up --build; set-location \""+scriptPath+"\"; get-childitem ; sleep 3}'";
+
+            //invoke-expression 'cmd /c start powershell -Command { docker compose up --build; set-location ".\"; get-childitem ; sleep 3}'
             //string command = @$"docker-compose -f {templatePath}/docker-compose.yml up -d";
 
             ////command = @$"Start-Process -FilePath http://localhost:14800/swagger/index.html";
@@ -68,14 +72,20 @@ namespace DMGenerator
             process.WaitForExit();
 
             StreamWriter strm = File.CreateText(@"c:\temp\StandardOutput2.txt");
+            StreamWriter strm3 = File.CreateText(@"c:\temp\StandardOutput3.txt");
             strm.Flush();
             strm.Close();
+            strm3.Flush();
+            strm3.Close();
 
             using (StreamWriter outfile = new StreamWriter(@"c:\temp\StandardOutput2.txt", true))
             {
                 outfile.Write(s);
             }
-
+            using (StreamWriter outfile = new StreamWriter(@"c:\temp\StandardOutput3.txt", true))
+            {
+                outfile.Write(command);
+            }
 
             //Process.Start(@"C:\windows\system32\windowspowershell\v1.0\powershell.exe", @"-File ""C:\Temp\Template\Test_API\Run_Solution.ps1""");
 
