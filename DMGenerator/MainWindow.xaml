@@ -18,7 +18,8 @@
     
     
     <Border CornerRadius="5" 
-            Background="#222222">
+            Background="#222222"
+            BorderThickness="1" BorderBrush="#FF717171">
         <Grid>
             <TextBlock Text="MDGenerator"
                        VerticalAlignment="Top"
@@ -73,7 +74,7 @@
 
             </StackPanel>
             <Frame x:Name="Main" Margin="150,40,0,0" NavigationUIVisibility="Hidden" />
-            <Image x:Name="Run_Close" RenderTransformOrigin="1,1" Source="/round_panorama_fish_eye_white_24dp.png" Width="18" Margin="772,10,10,423" Height="18" MouseLeftButtonDown="closBtn"/>
+            <Image x:Name="Run_Close" RenderTransformOrigin="1,1" Source="/round_panorama_fish_eye_white_24dp.png" Width="18" Margin="772,9,8,421" Height="18" MouseLeftButtonDown="closBtn"/>
         </Grid>
     </Border>
     

@@ -53,6 +53,13 @@
                         Margin="10,0,0,0" 
                         VerticalAlignment="Bottom" 
                         Width="200" Click="addPropertyButton_Clicked" />
+                <Button x:Name="removePropertyButton" 
+                        Content="Remove Property" 
+                        HorizontalAlignment="Left" 
+                        Height="24" 
+                        Margin="10,20,0,0" 
+                        VerticalAlignment="Bottom" 
+                        Width="200" Click="removePropertyButton_Clicked" />
 
 
 

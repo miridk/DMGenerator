@@ -55,5 +55,21 @@ namespace DMGenerator
                 propertiesAddedCheckBox.Items.Add("public " + Functionality.types[i] + " " + Functionality.props[i] + " { get; set; } " + Functionality.required[i]);
             }
         }
+
+        private void removePropertyButton_Clicked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            //TODO:
+            //Get ID numpber
+            //Functionality.props.//get id where prop = propertyNameTextBox.SelectedText
+
+            //Remove ID number for all property lists
+            //Functionality.props.Remove(//ID);
+
+            //Remove selected text
+            if (propertyNameTextBox.SelectedText != null)
+            {
+            //propertyNameTextBox.Text.Remove(propertyNameTextBox.SelectedText);
+            }
+        }
     }
 }
