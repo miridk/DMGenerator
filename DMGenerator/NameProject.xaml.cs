@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Diagnostics;
 using System.IO;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Forms;
 using System.Windows.Input;
 
 namespace DMGenerator
@@ -17,6 +18,18 @@ namespace DMGenerator
         public NameProject()
         {
             InitializeComponent();
+            portNumberTextBox.Text = "4800";
+        }
+
+        private void selectPathFileBtn_Clicked(object sender, RoutedEventArgs e)
+        {
+            FolderBrowserDialog diag = new FolderBrowserDialog();
+            if (diag.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                folderPathTextBox.Text = diag.SelectedPath;
+                Functionality.rootfolder = diag.SelectedPath;
+            }
+            
         }
 
         public void nextBtnNameProject(object sender, MouseButtonEventArgs e)
@@ -24,20 +37,16 @@ namespace DMGenerator
             string templ = Functionality.templateOfChoice;
             projectName = propertyNameTextBox.Text;
             Functionality.projectName = projectName.Replace(" ", "_");
-            string dir = @"C:\Temp\Template\";
+            Functionality.portNo = portNumberTextBox.Text;
+            string dir = @$"{Functionality.rootfolder}\{Functionality.projectName}\";
             if (!Directory.Exists(dir))
             {
                 Directory.CreateDirectory(dir);
             }
-            string script = @$"dotnet new {templ} -o C:\Temp\Template\{Functionality.projectName}"; 
+            string script = @$"dotnet new {templ} -o {dir}{Functionality.projectName}"; 
             RunScript(script);
-            File.Move(@$"C:\Temp\Template\{Functionality.projectName}\Dockerfile.del", @$"C:\Temp\Template\{Functionality.projectName}\Dockerfile");
+            File.Move(@$"{dir}{Functionality.projectName}\Dockerfile.del", @$"{dir}{Functionality.projectName}\Dockerfile");
         }
-
-      
-
-
-
 
         private static void RunScript(string script)
         {

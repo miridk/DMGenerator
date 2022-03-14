@@ -13,7 +13,7 @@ namespace DMGenerator
         public static string templateOfChoice = "";
         public static string connectionStringReplace = "";
         public static string projectName = "";
-        //public static string installationPath = @$"{rootfolder}\{projectName}";
+        public static string portNo = "4800";
 
         public static List<string> templates = new List<string>();
         public static List<string> props = new List<string>();
@@ -155,6 +155,23 @@ namespace DMGenerator
                 {
                     string contents = File.ReadAllText(file);
                     contents = contents.Replace(@"TAG_{'ConnectionString'}", connectionStringReplace);
+                    // Make files writable
+                    File.SetAttributes(file, FileAttributes.Normal);
+                    File.WriteAllText(file, contents);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+            //TAG_{ 'PortNumber'}
+            foreach (string file in files)
+            {
+                try
+                {
+                    string contents = File.ReadAllText(file);
+                    contents = contents.Replace(@"TAG_{'PortNumber'}", portNo);
                     // Make files writable
                     File.SetAttributes(file, FileAttributes.Normal);
                     File.WriteAllText(file, contents);

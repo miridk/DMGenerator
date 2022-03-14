@@ -59,16 +59,25 @@ namespace DMGenerator
         private void removePropertyButton_Clicked(object sender, System.Windows.RoutedEventArgs e)
         {
             //TODO:
-            //Get ID numpber
-            //Functionality.props.//get id where prop = propertyNameTextBox.SelectedText
-
-            //Remove ID number for all property lists
-            //Functionality.props.Remove(//ID);
-
-            //Remove selected text
-            if (propertyNameTextBox.SelectedText != null)
+            //Get ID number
+            if (propertiesAddedCheckBox.SelectedItem.ToString() != "public int Id { get; set; } ")
             {
-            //propertyNameTextBox.Text.Remove(propertyNameTextBox.SelectedText);
+                int propId = propertiesAddedCheckBox.SelectedIndex - 1;
+
+                //Remove ID number for all property lists
+                Functionality.props.RemoveAt(propId);
+                Functionality.types.RemoveAt(propId);
+                Functionality.required.RemoveAt(propId);
+
+                //Remove selected text
+                propertiesAddedCheckBox.Items.Clear();
+                propertiesAddedCheckBox.Items.Add("public int Id { get; set; } ");
+                int counterOfArraylist = Functionality.props.Count;
+                string[] str = new string[counterOfArraylist];
+                for (int i = 0; i < str.Length; i++)
+                {
+                    propertiesAddedCheckBox.Items.Add("public " + Functionality.types[i] + " " + Functionality.props[i] + " { get; set; } " + Functionality.required[i]);
+                }
             }
         }
     }
