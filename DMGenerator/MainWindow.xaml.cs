@@ -56,5 +56,10 @@ namespace DMGenerator
         {
             this.Close();
         }
+
+        private void aboutBtn_Clicked(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new About();
+        }
     }
 }

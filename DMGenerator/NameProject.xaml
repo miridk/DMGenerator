@@ -8,6 +8,8 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="NameProject">
 
+
+
     <StackPanel>
         <StackPanel>
             <TextBlock Text="Name Your Project"
@@ -74,8 +76,11 @@
                     <Hyperlink NavigateUri="AddPropertiesView.xaml" 
                                Foreground="White" 
                                TextDecorations="{x:Null}">                  
-                        <Border Width="150" Height="40"
-                                CornerRadius="5" MouseDown="nextBtnNameProject">
+                        <Border x:Name="nextBtnNameProjectName" 
+                                Width="150" 
+                                Height="40"
+                                CornerRadius="5" 
+                                MouseDown="nextBtnNameProject">
                             <Border.Background>
                                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                                     <GradientStop Color="#FF5BFF7C" Offset="0.0"/>

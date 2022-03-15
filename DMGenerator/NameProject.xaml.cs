@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Input;
+using System.Windows.Media.Animation;
 
 namespace DMGenerator
 {
@@ -60,5 +61,13 @@ namespace DMGenerator
             process.Start();
             process.WaitForExit();
         }
+
+        //private void RunProgressBar()
+        //{
+        //    progressBar.Visibility = Visibility.Visible;
+        //    Duration duration = new Duration(TimeSpan.FromSeconds(1));
+        //    DoubleAnimation doubleanimation = new DoubleAnimation(progressBar.Value + 20, duration);
+        //    progressBar.BeginAnimation(System.Windows.Controls.ProgressBar.ValueProperty, doubleanimation);
+        //}
     }
 }

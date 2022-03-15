@@ -1,0 +1,46 @@
+﻿<Page x:Class="DMGenerator.About"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DMGenerator"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="About">
+
+    <StackPanel>
+        <TextBlock Text="About"
+                   Foreground="White"
+                   FontSize="28"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,20"/>
+        <TextBlock Text="Overview"
+                   Foreground="White"
+                   FontSize="20"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,10"/>
+        <TextBlock Text="This tool is ment as a developers tool to generate microservices from .Net CLI templates.&#x0a;replacing the code in the template with the tags below, will enable the tool to replace these with generated code."
+                   Foreground="White"
+                   FontSize="12"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,10"/>
+        <TextBlock Text="Tags"
+                   Foreground="White"
+                   FontSize="20"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,10"/>
+        <TextBlock Text="This is a list of the available tags at this point:&#x0a;&#x0a;
+TAG_{'propertiesModel'}&#x0a;
+TAG_{'controllerPutModel'}&#x0a;
+TAG_{'propertiesEf'}&#x0a;
+TAG_{'propertiesEfDesigner'}&#x0a;
+TAG_{'ConnectionString'}&#x0a;
+TAG_{'PortNumber'}&#x0a;
+&#x0a;
+More information on how to use the will come."
+                   Foreground="White"
+                   FontSize="12"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,10"/>
+    </StackPanel>
+</Page>
