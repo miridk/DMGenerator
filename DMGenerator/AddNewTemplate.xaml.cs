@@ -7,9 +7,6 @@ using System.Windows.Input;
 
 namespace DMGenerator
 {
-    /// <summary>
-    /// Interaction logic for AddNewTemplate.xaml
-    /// </summary>
     public partial class AddNewTemplate : Page
     {
         public AddNewTemplate()
@@ -51,11 +48,6 @@ namespace DMGenerator
             //powerShellOutputListBox.Items.Add(lines.ToString());
 
             process.WaitForExit();
-        }
-
-        private void installTemplateBtn(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

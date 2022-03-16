@@ -8,9 +8,6 @@ using System.Windows.Input;
 
 namespace DMGenerator
 {
-    /// <summary>
-    /// Interaction logic for AddNewServiceView.xaml
-    /// </summary>
     public partial class AddNewServiceView : Page
     {
         public static List<string> listOfTemplates = new List<string>();

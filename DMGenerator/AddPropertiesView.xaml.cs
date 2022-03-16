@@ -3,9 +3,6 @@ using System.Windows.Input;
 
 namespace DMGenerator
 {
-    /// <summary>
-    /// Interaction logic for AddPropertiesView.xaml
-    /// </summary>
     public partial class AddPropertiesView : Page
     {
         public AddPropertiesView()

@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace DMGenerator
 {
-    /// <summary>
-    /// Interaction logic for FirstViewAddService.xaml
-    /// </summary>
     public partial class FirstViewAddService : Page
     {
         public FirstViewAddService()

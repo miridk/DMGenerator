@@ -1,18 +1,12 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Input;
-using System.Windows.Media.Animation;
 
 namespace DMGenerator
 {
-    /// <summary>
-    /// Interaction logic for NameProject.xaml
-    /// </summary>
     public partial class NameProject : Page
     {
         public static string projectName = "";
@@ -28,9 +22,7 @@ namespace DMGenerator
             if (diag.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 folderPathTextBox.Text = diag.SelectedPath;
-                Functionality.rootfolder = diag.SelectedPath;
             }
-            
         }
 
         public void nextBtnNameProject(object sender, MouseButtonEventArgs e)
@@ -39,6 +31,7 @@ namespace DMGenerator
             projectName = propertyNameTextBox.Text;
             Functionality.projectName = projectName.Replace(" ", "_");
             Functionality.portNo = portNumberTextBox.Text;
+            Functionality.rootfolder = folderPathTextBox.Text;
             string dir = @$"{Functionality.rootfolder}\{Functionality.projectName}\";
             if (!Directory.Exists(dir))
             {
