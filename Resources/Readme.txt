@@ -2,4 +2,4 @@ dotnet publish -r win-x64 /p:PublishSingleFile=true /p:IncludeNativeLibrariesFor
 
 
 Single file release
-dotnet publish -r win-x64 -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:SelfContained=true --self-contained --output "C:\temp\releaseParty"
+dotnet publish -r win-x64 -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:SelfContained=true --self-contained --output "C:\temp\releaseDMG"
