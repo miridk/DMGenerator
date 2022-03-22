@@ -45,27 +45,6 @@
                 </Button>
                 <Button Style="{StaticResource MenuButtonsTemplate}" 
                         Width="150" Height="40"
-                        Click="microserviceBtn_Clicked">
-                    <TextBlock
-                        Text="Create Frontend"
-                        Margin="20,0,0,0"/>
-                </Button>
-                <Button Style="{StaticResource MenuButtonsTemplate}" 
-                        Width="150" Height="40"
-                        Click="microserviceBtn_Clicked">
-                    <TextBlock
-                        Text="Pipeline Management"
-                        Margin="20,0,0,0"/>
-                </Button>
-                <Button Style="{StaticResource MenuButtonsTemplate}" 
-                        Width="150" Height="40"
-                        Click="microserviceBtn_Clicked">
-                    <TextBlock
-                        Text="Settings"
-                        Margin="20,0,0,0"/>
-                </Button>
-                <Button Style="{StaticResource MenuButtonsTemplate}" 
-                        Width="150" Height="40"
                         Click="aboutBtn_Clicked">
                     <TextBlock
                         Text="About"

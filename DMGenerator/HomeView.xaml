@@ -44,39 +44,5 @@
                 </Grid>
             </Border>
         </StackPanel>
-        <StackPanel Width="620"
-                    HorizontalAlignment="Left">
-            <Border>
-                <Grid>
-                    <TextBlock>
-                    <Hyperlink NavigateUri="MicroservicesView.xaml"
-                               TextDecorations="{x:Null}">
-                        <Border Width="600"
-                                Height="180">
-                            <Border.Background>
-                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                                    <GradientStop Color="#5bc3ff" Offset="0.0"/>
-                                    <GradientStop Color="Black" Offset="1.2"/>
-                                </LinearGradientBrush>
-                            </Border.Background>
-                            <Border.Clip>
-                                <RectangleGeometry RadiusX="5"
-                                       RadiusY="5"
-                                       Rect="0,0,600,180"/>
-                            </Border.Clip>
-                            <Grid>
-                                <StackPanel>
-                                    <TextBlock Text="Add A New Frontend"
-                                               Foreground="White"
-                                               FontSize="24"
-                                               Margin="20,10,10,0"/>
-                                </StackPanel>
-                            </Grid>
-                        </Border>
-                    </Hyperlink>
-                </TextBlock>
-                </Grid>
-            </Border>
-        </StackPanel>
     </StackPanel>
 </Page>

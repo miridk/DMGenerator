@@ -57,7 +57,7 @@
                         Content="Remove Property" 
                         HorizontalAlignment="Left" 
                         Height="24" 
-                        Margin="10,20,0,0" 
+                        Margin="10,63,0,0" 
                         VerticalAlignment="Bottom" 
                         Width="200" Click="removePropertyButton_Clicked" />
 

@@ -19,7 +19,7 @@
         <StackPanel Orientation="Horizontal"
                     Margin="0,0,0,10">
             <Border Width="600"
-                    Height="40">
+                    Height="200">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="#5bc3ff" Offset="0.0"/>
@@ -29,7 +29,7 @@
                 <Border.Clip>
                     <RectangleGeometry RadiusX="5"
                                        RadiusY="5"
-                                       Rect="0,0,600,40"/>
+                                       Rect="0,0,600,200"/>
                 </Border.Clip>
                 <Grid>
                     <StackPanel>
@@ -52,7 +52,7 @@
                                        VerticalAlignment="Center"
                                        Width="600" 
                                        TextDecorations="{x:Null}" 
-                                       Height="40"> 
+                                       Height="200"> 
                                 <Hyperlink NavigateUri="FirstViewAddService.xaml" 
                                            Foreground="White" 
                                            TextDecorations="{x:Null}">  
@@ -87,141 +87,11 @@
             </Border>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal"
-                    Margin="0,0,0,10">
-            <Border Width="600"
-                    Height="40">
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#5bc3ff" Offset="0.0"/>
-                        <GradientStop Color="Black" Offset="1.2"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-                <Border.Clip>
-                    <RectangleGeometry RadiusX="5"
-                                       RadiusY="5"
-                                       Rect="0,0,600,40"/>
-                </Border.Clip>
-                <Grid>
-                    <StackPanel>
-                        <TextBlock Text="Create Frontend For This Backend Service"
-                                   Foreground="White"
-                                   FontSize="14"
-                                   HorizontalAlignment="Left"
-                                   Margin="10,10,10,0" Width="540"/>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock>
-                        <Hyperlink NavigateUri="MicroservicesView.xaml">
-                            
+       
 
-                        <Border CornerRadius="5"
-                                Margin="0,0,0,0"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Bottom">
-                            <TextBlock HorizontalAlignment="Right" 
-                                       VerticalAlignment="Center"
-                                       Width="600" 
-                                       TextDecorations="{x:Null}" 
-                                       Height="40"> 
-                                <Hyperlink NavigateUri="MicroservicesView.xaml" 
-                                           Foreground="White" 
-                                           TextDecorations="{x:Null}">  
-                                    <Border Width="35"
-                                            Height="35"
-                                            CornerRadius="5"
-                                            Margin="557,3,0,0">
-                                        <Border.Background>
-                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                                                <GradientStop Color="#FF5BFF7C" Offset="0.0"/>
-                                                <GradientStop Color="Black" Offset="1.2"/>
-                                            </LinearGradientBrush>
-                                        </Border.Background>
-                                        <Border.Clip>
-                                            <RectangleGeometry RadiusX="5"
-                                                       RadiusY="5"
-                                                       Rect="0,0,35,35"/>
-                                        </Border.Clip>
-                                        <Grid>
-                                            <StackPanel>
-
-                                            </StackPanel>
-                                        </Grid>
-                                    </Border>
-                                </Hyperlink>
-                            </TextBlock>
-                        </Border>
-                        </Hyperlink>
-                        </TextBlock>
-                    </StackPanel>
-                </Grid>
-            </Border>
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal"
-                    Margin="0,0,0,10">
-            <Border Width="600"
-                    Height="180">
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#5bc3ff" Offset="0.0"/>
-                        <GradientStop Color="Black" Offset="1.2"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-                <Border.Clip>
-                    <RectangleGeometry RadiusX="5"
-                                       RadiusY="5"
-                                       Rect="0,0,600,180"/>
-                </Border.Clip>
-                <Grid>
-                    <StackPanel>
-                        <TextBlock Text="Run Backend Service With Docker-Compose"
-                                   Foreground="White"
-                                   FontSize="14"
-                                   HorizontalAlignment="Left"
-                                   Margin="10,10,10,0" Width="540"/>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock>
-                        <Border CornerRadius="5"
-                                Margin="0,0,0,0"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Bottom">
-                            <TextBlock HorizontalAlignment="Right" 
-                                       VerticalAlignment="Center"
-                                       Width="600" 
-                                       TextDecorations="{x:Null}" 
-                                       Height="180" MouseDown="startSeviceBtn"> 
-                                    <Border Width="35"
-                                            Height="35"
-                                            CornerRadius="5"
-                                            Margin="557,3,0,0">
-                                        <Border.Background>
-                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                                                <GradientStop Color="#FF5BFF7C" Offset="0.0"/>
-                                                <GradientStop Color="Black" Offset="1.2"/>
-                                            </LinearGradientBrush>
-                                        </Border.Background>
-                                        <Border.Clip>
-                                            <RectangleGeometry RadiusX="5"
-                                                       RadiusY="5"
-                                                       Rect="0,0,35,35"/>
-                                        </Border.Clip>
-                                        <Grid>
-                                            <StackPanel>
-
-                                            </StackPanel>
-                                        </Grid>
-                                    </Border>
-                            </TextBlock>
-                        </Border>
-                        </TextBlock>
-                    </StackPanel>
-                </Grid>
-            </Border>
-        </StackPanel>
+        
         <Border CornerRadius="5"
-                        Margin="0,0,0,0"
+                        Margin="0,40,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Bottom">
             <TextBlock HorizontalAlignment="Right" 
