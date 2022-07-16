@@ -69,20 +69,25 @@ namespace DMGenerator
             process.StartInfo.FileName = @"C:\windows\system32\windowspowershell\v1.0\powershell.exe";
             process.StartInfo.Arguments = strCmdText;
 
+            string path = @"c:\temp2";
+            string fileName = @"c:\temp2\StandardOutput.txt";
+            DirectoryInfo di = Directory.CreateDirectory(path);
+            using (FileStream fs = File.Create(fileName)){}
+
             process.Start();
             string s = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
 
-            StreamWriter strm = File.CreateText(@"c:\temp\StandardOutput.txt");
+            StreamWriter strm = File.CreateText(fileName);
             strm.Flush();
             strm.Close();
 
-            using (StreamWriter outfile = new StreamWriter(@"c:\temp\StandardOutput.txt", true))
+            using (StreamWriter outfile = new StreamWriter(fileName, true))
             {
                 outfile.Write(s);
             }
 
-            List<string> lines = File.ReadLines(@"c:\temp\StandardOutput.txt").ToList();
+            List<string> lines = File.ReadLines(fileName).ToList();
 
             for (int i = 0; i < lines.Count; i++)
             {

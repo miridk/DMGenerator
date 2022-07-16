@@ -37,7 +37,10 @@ TAG_{'propertiesEfDesigner'}&#x0a;
 TAG_{'ConnectionString'}&#x0a;
 TAG_{'PortNumber'}&#x0a;
 &#x0a;
-More information on how to use the will come."
+Dependencies: | DOTNET CLI | Docker Desktop |&#x0a;
+&#x0a;
+Note: The first time you build a backend, the program will have to download the SQL server image.&#x0a;
+This will take several minutes."
                    Foreground="White"
                    FontSize="12"
                    HorizontalAlignment="Left"
