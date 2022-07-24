@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -16,6 +17,9 @@ namespace DMGenerator
 
         public AddNewServiceView()
         {
+            try
+            {
+
             InitializeComponent();
             Functionality.textToReplace = "";
             Functionality.text = "";
@@ -42,63 +46,80 @@ namespace DMGenerator
                 listBoxOfTemplates.Items.Add(res[b].ToString());
             }
             listBoxOfTemplates.SelectedIndex = 0;
+
+            }catch (Exception ex)
+            {
+                Logger.WriteLog(ex.Message);
+            }
         }
 
         private void nextBtnAddNewService(object sender, MouseButtonEventArgs e)
         {
-            if (listBoxOfTemplates.SelectedItem != null)
+            try
             {
-                Functionality.templateOfChoice = listBoxOfTemplates.SelectedItem.ToString();
-            }
-            else
+                if (listBoxOfTemplates.SelectedItem != null)
+                {
+                    Functionality.templateOfChoice = listBoxOfTemplates.SelectedItem.ToString();
+                }
+                else
+                {
+                    Functionality.templateOfChoice = Functionality.templates[0].ToString();
+                }           
+            }catch (Exception ex)
             {
-                Functionality.templateOfChoice = Functionality.templates[0].ToString();
+                Logger.WriteLog(ex.Message);
             }
         }
 
         private void FeedbackFromPowerShellRun(string script)
         {
-            string r;
-            string[] listOfr;
-
-            string strCmdText = script;
-            var process = new Process();
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.FileName = @"C:\windows\system32\windowspowershell\v1.0\powershell.exe";
-            process.StartInfo.Arguments = strCmdText;
-
-            string path = @"c:\temp2";
-            string fileName = @"c:\temp2\StandardOutput.txt";
-            DirectoryInfo di = Directory.CreateDirectory(path);
-            using (FileStream fs = File.Create(fileName)){}
-
-            process.Start();
-            string s = process.StandardOutput.ReadToEnd();
-            process.WaitForExit();
-
-            StreamWriter strm = File.CreateText(fileName);
-            strm.Flush();
-            strm.Close();
-
-            using (StreamWriter outfile = new StreamWriter(fileName, true))
+            try
             {
-                outfile.Write(s);
-            }
+                string r;
+                string[] listOfr;
 
-            List<string> lines = File.ReadLines(fileName).ToList();
+                string strCmdText = script;
+                var process = new Process();
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.FileName = @"C:\windows\system32\windowspowershell\v1.0\powershell.exe";
+                process.StartInfo.Arguments = strCmdText;
 
-            for (int i = 0; i < lines.Count; i++)
-            {
-                r = Regex.Replace(lines[i].ToString(), @"\s\s+", ",");
+                string path = @"c:\temp2";
+                string fileName = @"c:\temp2\StandardOutput.txt";
+                DirectoryInfo di = Directory.CreateDirectory(path);
+                using (FileStream fs = File.Create(fileName)){}
 
-                listOfr = r.Split(',');
+                process.Start();
+                string s = process.StandardOutput.ReadToEnd();
+                process.WaitForExit();
 
-                if (listOfr.Length > 1)
+                StreamWriter strm = File.CreateText(fileName);
+                strm.Flush();
+                strm.Close();
+
+                using (StreamWriter outfile = new StreamWriter(fileName, true))
                 {
-                        res.Add(listOfr[1]);
+                    outfile.Write(s);
                 }
+
+                List<string> lines = File.ReadLines(fileName).ToList();
+
+                for (int i = 0; i < lines.Count; i++)
+                {
+                    r = Regex.Replace(lines[i].ToString(), @"\s\s+", ",");
+
+                    listOfr = r.Split(',');
+
+                    if (listOfr.Length > 1)
+                    {
+                        res.Add(listOfr[1]);
+                    }
+                }
+            }catch (Exception ex)
+            {
+                Logger.WriteLog(ex.Message);
             }
         }
 
